@@ -1,0 +1,14 @@
+C:\repos\Main\titanDWS\titanDWS\bin\titanDWS.dll.config
+C:\repos\Main\titanDWS\titanDWS\bin\titanDWS.dll
+C:\repos\Main\titanDWS\titanDWS\bin\titanDWS.pdb
+C:\repos\Main\titanDWS\titanDWS\bin\Newtonsoft.Json.dll
+C:\repos\Main\titanDWS\titanDWS\bin\System.Net.Http.Formatting.dll
+C:\repos\Main\titanDWS\titanDWS\bin\System.Web.Http.dll
+C:\repos\Main\titanDWS\titanDWS\bin\System.Web.Http.WebHost.dll
+C:\repos\Main\titanDWS\titanDWS\bin\Newtonsoft.Json.xml
+C:\repos\Main\titanDWS\titanDWS\bin\System.Net.Http.Formatting.xml
+C:\repos\Main\titanDWS\titanDWS\bin\System.Web.Http.xml
+C:\repos\Main\titanDWS\titanDWS\bin\System.Web.Http.WebHost.xml
+C:\repos\Main\titanDWS\titanDWS\obj\Release\titanDWS.csprojResolveAssemblyReference.cache
+C:\repos\Main\titanDWS\titanDWS\obj\Release\titanDWS.dll
+C:\repos\Main\titanDWS\titanDWS\obj\Release\titanDWS.pdb

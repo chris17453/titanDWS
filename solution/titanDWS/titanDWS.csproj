@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13347E31-C3A1-42CE-857B-40A3806CAC92}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>titan</RootNamespace>
+    <AssemblyName>titanDWS</AssemblyName>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\nocodedb\nocodedb\data\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="media\tablesorter\css\dragtable.mod.min.css" />
+    <Content Include="media\tablesorter\css\filter.formatter.min.css" />
+    <Content Include="media\tablesorter\css\images\black-asc.gif" />
+    <Content Include="media\tablesorter\css\images\black-desc.gif" />
+    <Content Include="media\tablesorter\css\images\black-unsorted.gif" />
+    <Content Include="media\tablesorter\css\images\bootstrap-black-unsorted.png" />
+    <Content Include="media\tablesorter\css\images\bootstrap-white-unsorted.png" />
+    <Content Include="media\tablesorter\css\images\dragtable-handle.png" />
+    <Content Include="media\tablesorter\css\images\dragtable-handle.svg" />
+    <Content Include="media\tablesorter\css\images\dropbox-asc-hovered.png" />
+    <Content Include="media\tablesorter\css\images\dropbox-asc.png" />
+    <Content Include="media\tablesorter\css\images\dropbox-desc-hovered.png" />
+    <Content Include="media\tablesorter\css\images\dropbox-desc.png" />
+    <Content Include="media\tablesorter\css\images\first.png" />
+    <Content Include="media\tablesorter\css\images\green-asc.gif" />
+    <Content Include="media\tablesorter\css\images\green-desc.gif" />
+    <Content Include="media\tablesorter\css\images\green-header.gif" />
+    <Content Include="media\tablesorter\css\images\green-unsorted.gif" />
+    <Content Include="media\tablesorter\css\images\ice-asc.gif" />
+    <Content Include="media\tablesorter\css\images\ice-desc.gif" />
+    <Content Include="media\tablesorter\css\images\ice-unsorted.gif" />
+    <Content Include="media\tablesorter\css\images\last.png" />
+    <Content Include="media\tablesorter\css\images\loading.gif" />
+    <Content Include="media\tablesorter\css\images\metro-black-asc.png" />
+    <Content Include="media\tablesorter\css\images\metro-black-desc.png" />
+    <Content Include="media\tablesorter\css\images\metro-loading.gif" />
+    <Content Include="media\tablesorter\css\images\metro-unsorted.png" />
+    <Content Include="media\tablesorter\css\images\metro-white-asc.png" />
+    <Content Include="media\tablesorter\css\images\metro-white-desc.png" />
+    <Content Include="media\tablesorter\css\images\next.png" />
+    <Content Include="media\tablesorter\css\images\prev.png" />
+    <Content Include="media\tablesorter\css\images\white-asc.gif" />
+    <Content Include="media\tablesorter\css\images\white-desc.gif" />
+    <Content Include="media\tablesorter\css\images\white-unsorted.gif" />
+    <Content Include="media\tablesorter\css\jquery.tablesorter.pager.min.css" />
+    <Content Include="media\tablesorter\css\theme.blackice.min.css" />
+    <Content Include="media\tablesorter\css\theme.blue.css" />
+    <Content Include="media\tablesorter\css\theme.blue.min.css" />
+    <Content Include="media\tablesorter\css\theme.bootstrap.min.css" />
+    <Content Include="media\tablesorter\css\theme.bootstrap_2.min.css" />
+    <Content Include="media\tablesorter\css\theme.bootstrap_3.min.css" />
+    <Content Include="media\tablesorter\css\theme.bootstrap_4.min.css" />
+    <Content Include="media\tablesorter\css\theme.dark.min.css" />
+    <Content Include="media\tablesorter\css\theme.default.min.css" />
+    <Content Include="media\tablesorter\css\theme.dropbox.min.css" />
+    <Content Include="media\tablesorter\css\theme.green.min.css" />
+    <Content Include="media\tablesorter\css\theme.grey.min.css" />
+    <Content Include="media\tablesorter\css\theme.ice.min.css" />
+    <Content Include="media\tablesorter\css\theme.jui.min.css" />
+    <Content Include="media\tablesorter\css\theme.materialize.min.css" />
+    <Content Include="media\tablesorter\css\theme.metro-dark.min.css" />
+    <Content Include="media\tablesorter\css\widget.grouping.min.css" />
+    <Content Include="media\tablesorter\js\extras\jquery.dragtable.mod.min.js" />
+    <Content Include="media\tablesorter\js\extras\jquery.metadata.min.js" />
+    <Content Include="media\tablesorter\js\extras\jquery.tablesorter.pager.min.js" />
+    <Content Include="media\tablesorter\js\extras\semver-mod.min.js" />
+    <Content Include="media\tablesorter\js\jquery.tablesorter.combined.js" />
+    <Content Include="media\tablesorter\js\jquery.tablesorter.combined.min.js" />
+    <Content Include="media\tablesorter\js\jquery.tablesorter.min.js" />
+    <Content Include="media\tablesorter\js\jquery.tablesorter.widgets.js" />
+    <Content Include="media\tablesorter\js\jquery.tablesorter.widgets.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-extract.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-iso8601.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-month.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-range.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-two-digit-year.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date-weekday.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-date.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-duration.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-feet-inch-fraction.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-file-type.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-globalize.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-huge-numbers.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-ignore-articles.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-image.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-input-select.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-metric.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-named-numbers.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-network.min.js" />
+    <Content Include="media\tablesorter\js\parsers\parser-roman.min.js" />
+    <Content Include="media\tablesorter\js\widget-pager.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-alignChar.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-build-table.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-chart.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-columns.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-columnSelector.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-cssStickyHeaders.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-currentSort.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-editable.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-filter-formatter-html5.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-filter-formatter-jui.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-filter-formatter-select2.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-filter-type-insideRange.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-filter.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-formatter.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-grouping.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-headerTitles.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-lazyload.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-mark.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-math.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-output.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-pager.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-print.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-reflow.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-repeatheaders.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-resizable.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-saveSort.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-scroller.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-sort2Hash.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-sortTbodies.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-staticRow.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-stickyHeaders.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-storage.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-toggle.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-uitheme.min.js" />
+    <Content Include="media\tablesorter\js\widgets\widget-view.min.js" />
+    <Content Include="media\titan\titanDWS.css" />
+    <Content Include="packages.config" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="model\json_results.cs" />
+    <Compile Include="model\method_results.cs" />
+    <Compile Include="model\titan_models.cs" />
+    <Compile Include="core\aggregate.cs" />
+    <Compile Include="core\column.cs" />
+    <Compile Include="core\column_types.cs" />
+    <Compile Include="core\data_types.cs" />
+    <Compile Include="core\external_data_defaults.cs" />
+    <Compile Include="core\external_data_mapping.cs" />
+    <Compile Include="core\linked_method.cs" />
+    <Compile Include="core\localization.cs" />
+    <Compile Include="core\output_types.cs" />
+    <Compile Include="core\parameter.cs" />
+    <Compile Include="core\parameter_types.cs" />
+    <Compile Include="core\select_options.cs" />
+    <Compile Include="core\template.cs" />
+    <Compile Include="core\titan_ajax_object.cs" />
+    <Compile Include="controller\method_controller.cs" />
+    <Compile Include="back_end\global.cs" />
+    <Compile Include="back_end\method.cs" />
+    <Compile Include="back_end\method_crud.cs" />
+    <Compile Include="back_end\method_execute.cs" />
+    <Compile Include="back_end\method_static.cs" />
+    <Compile Include="back_end\method_variables.cs" />
+    <Compile Include="back_end\query.cs" />
+    <Compile Include="back_end\security.cs" />
+    <Compile Include="back_end\titanDWS.cs" />
+    <Compile Include="resources\mime_type.cs" />
+    <Compile Include="resources\core.cs" />
+    <Compile Include="controller\resource_controller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="media\tablesorter\css\less\bootstrap.less" />
+    <Content Include="media\tablesorter\css\less\metro.less" />
+    <Content Include="media\tablesorter\css\less\theme.less" />
+    <Content Include="media\tablesorter\css\scss\theme.scss" />
+    <None Include="Properties\PublishProfiles\RAW.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controller\" />
+    <Folder Include="model\" />
+    <Folder Include="core\" />
+    <Folder Include="back_end\" />
+    <Folder Include="web_pages\" />
+    <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="web_pages\preview.html" />
+    <EmbeddedResource Include="web_pages\config.html" />
+    <EmbeddedResource Include="media\titan\titanDWS.js" />
+    <EmbeddedResource Include="web_pages\index.html">
+      <LogicalName>titan.index.html</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="certificates\cer.pfx" />
+    <EmbeddedResource Include="media\tablesorter\js\jquery.tablesorter.js" />
+    <EmbeddedResource Include="media\tablesorter\js\extras\jquery.tablesorter.pager.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\nocodedb\nocodedb\data\data.csproj">
+      <Project>{D580FE26-16EB-44C0-A984-404102C32704}</Project>
+      <Name>data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nocodedb\nocodedb\log\log.csproj">
+      <Project>{7EC32681-4F92-4CE4-8B04-6E835519A162}</Project>
+      <Name>log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21937</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://percent.complete/web_api/titan</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

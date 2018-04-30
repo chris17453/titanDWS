@@ -1,0 +1,165 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="titanMaster.master.cs" Inherits="titan.titanMaster" %><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="<%=titan_url %>/media/jquery-3.1.1.min.js"></script>
+    <script src="<%=titan_url %>/media/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="<%=titan_url %>/media/tablesorter/js/jquery.tablesorter.min.js"></script>
+    <script src="<%=titan_url %>/media/tablesorter/js/jquery.tablesorter.widgets.min.js"></script>
+    <script src="<%=titan_url %>/media/tablesorter/js/extras/jquery.tablesorter.pager.min.js"></script>
+    <script src="<%=titan_url %>/media/tablesorter/js/parsers/parser-input-select.min.js"></script>
+    <link href="<%=ResolveUrl("~/media/jquery-ui-1.12.1.custom/jquery-ui.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/media/tablesorter/css/jquery.tablesorter.pager.min.css") %>" rel="stylesheet" />
+    <link href="<%=ResolveUrl("~/media/bootstrap/css/bootstrap.min.css") %>" rel="stylesheet" />
+
+    <script type="text/javascript" src="<%=titan_url %>/media/jqPlot/jquery.jqplot.js"></script>
+    <script type="text/javascript" src="<%=titan_url %>/media/jqPlot/plugins/jqplot.json2.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("~/media/jqPlot/jquery.jqplot.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("~/media/PB/design.system.css") %>" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>$(function () {
+        $(".titan_date").datepicker();
+        $(".titan_date").datepicker("option", "dateFormat", "yy-mm-dd");
+        $(document).tooltip();                                                  //enable tooltips
+
+    });
+    </script>
+<style type="text/css">
+
+    @font-face {
+      font-family: 'pbfont';
+      src: url('~/media/fonts/pbfont.eot'); /* IE9 Compat Modes */
+      src: url('~/media/fonts/pbfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+           url('~/media/fonts/pbfont.woff') format('woff'), /* Pretty Modern Browsers */
+           url('~/media/fonts/pbfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+           url('~/media/fonts/pbfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    }
+
+    @font-face {
+      font-family: 'Nucleo Mini';
+      src: url('~/media/fonts/NucleoMini.woff') format('woff'), /* Pretty Modern Browsers */
+           url('~/media/fonts/NucleoMini.ttf')  format('truetype'), /* Safari, Android, iOS */
+    }
+    @font-face {
+      font-family: 'Nucleo Outline';
+      src: url('~/media/fonts/NucleoOutline.woff') format('woff'), /* Pretty Modern Browsers */
+           url('~/media/fonts/NucleoOutline.ttf')  format('truetype'), /* Safari, Android, iOS */
+    }
+
+
+
+
+    .doc-hero, .gradient-swatch.gradient1, .doc-gradient, .sample-app .panel-heading {
+        background-image: -webkit-gradient(linear, left top, right top, from(#3e53a4), to(#cf0989));
+        background-image: -webkit-linear-gradient(left, #3e53a4 0%, #cf0989 100%);
+        background-image: linear-gradient(90deg, #3e53a4 0%, #cf0989 100%);
+    }
+
+    .doc-hero.closed {
+        height: 60px;
+        top: 70px;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .eyebrow {
+        margin-top:15px;
+        box-sizing:
+border-box
+;
+color:
+rgb(255, 255, 255)
+;
+display:
+inline-block
+;
+font-family:
+PrecisionSans_W_Rg, "Helvetica Neue", Arial, sans-serif
+;
+font-size:
+20px
+;
+font-weight:
+normal
+;
+height:
+28px
+;
+line-height:
+28.5714px
+;
+text-size-adjust:
+100%
+;
+
+-webkit-box-direction:
+normal
+;
+-webkit-tap-highlight-color:
+rgba(0, 0, 0, 0)
+;
+    }
+#TEST{
+    margin-top:100px;
+    width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+    header {
+        margin: 0px !important;
+        color:white;
+        position:relative;
+    }
+    main{
+        margin:0px;
+    }
+    .brand-text{
+    color: white;
+    font-size: 24px;
+    line-height: 64px;
+
+    }
+</style>
+</head>
+<body>
+   <form id="form1" type="post" runat="server" enctype="multipart/form-data">
+   <asp:HiddenField ID="hfWebService"  runat="server" />
+<header><div class="navbar-2 yamm navbar-2-default custom-navbar-2" role="navigation">
+      <div class="container">
+        <div class="navbar-2-header">
+            <a href="/" class="pb-header-mark"></a>
+            <a class="brand-text" href="/" >TitanDWS</a>
+        </div>
+      </div><!-- /container -->
+    </div><!-- /navbar -->
+    </header>
+
+
+
+
+                    
+        <asp:ContentPlaceHolder ID="titanContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+<div id="titan_index"   runat="server"></div>
+                    <div id="titan_edit"    runat="server"></div>
+                    <div id="titan_preview" runat="server"></div>
+<footer ui-view="footer" class=""><div class="container">
+  <div class="contents">
+    <!-- the logo and copyright have their own flexbox -->
+    <div class="logo-copyright">
+      <div class="footer-logo"><a href="http://www.pb.com"><i class="pb-footer-logo gradient"></i></a></div>
+      <div class="copyright">© 2002–2017 Pitney Bowes Inc. All rights reserved.</div>
+    </div>
+
+  </div>
+</div></footer>
+    
+    </form>
+</body>
+</html>

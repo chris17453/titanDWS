@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Titan Preview</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="{titan_url}jquery.tablesorter.js"></script>
+    <script src="{titan_url}jquery.tablesorter.pager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.27/moment.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.27/daterangepicker.min.js" type="text/javascript" charset="utf-8"></script>        
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" rel="stylesheet" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.4/css/jquery.tablesorter.pager.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.27/daterangepicker.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{titan_url}titanDWS.js" type="text/javascript" charset="utf-8"></script>
+
+    
+
+
+    <script type="text/javascript">
+        $(function () {
+            init();
+        });
+        var init=function(){
+            var r1 ='0';
+            var r2 ='0';
+            var r3 ='0';
+            var r4 ='0';
+            var r5 ='0';
+            var r6 ='0';
+            var r7 ='0';
+            var r8 ='0';
+            var r9 ='0';
+            var r10='0';
+            var r11='0';
+            var r12='0';
+            var r13='0';
+            var r14='0';
+            var r15='0';
+            var check =md5(r1+r2+r3+r4+r5+r6+r7+r8+r9+r10+r11+r12+r13+r14+r15);
+            var group  ="{group}";
+            var method ="{method}";
+            var owner  ="{owner}";
+            $(".titan_id").text(group+" - "+method+" - "+owner);               
+           var preview=new titanDWS_report(".titan_params", ".titan_report"); 
+           preview.create_signature(group,method,owner,check,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15);
+           preview.load_report();         //this is the actual js call that makes the report
+                  
+        }
+    </script>
+   <meta charset="utf-8" />
+</head>
+<body>
+
+
+<script>
+    $(function () {
+        $(".titan_date").datepicker();
+        $(".titan_date").datepicker("option", "dateFormat", "yy-mm-dd");
+        $(document).tooltip();                                                  //enable tooltips
+
+    });
+</script>
+<style type="text/css">
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px; /* Set the fixed height of the footer here */
+      line-height: 60px; /* Vertically center the text there */
+      background-color: #f5f5f5;
+    }
+
+    #TEST {
+        margin-top: 100px;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        margin: 0px !important;
+        color: white;
+        position: relative;
+    }
+
+    main {
+        margin: 0px;
+    }
+
+    .brand-text {
+        color: white;
+        font-size: 24px;
+        line-height: 64px;
+    }
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      /* Margin bottom by footer height */
+      margin-bottom: 60px;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      height: 60px;
+      line-height: 60px; /* Vertically center the text there */
+      background-color: #f5f5f5;
+    }
+</style>
+
+<input type="hidden" id="titanWebService"  value="{titan_url}" />
+
+
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+    <div class="container">
+        <a class="navbar-brand" href="/">titanDWS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link titan_index" href="preview/titan/list/0/">Index <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav class="breadcrumb">
+    <div class="container">
+        <a class="breadcrumb-item" id="index_link" href="">Index</a>
+        <span class="breadcrumb-item active">Preview Method</span>
+    </div>
+</nav>
+
+
+       <div id="json_dialog">
+        <div id="json_pre"></div>
+    </div>
+    <style type="text/css">
+        .right {
+            float: right;
+        }
+
+            .right a {
+                color: white;
+            }
+
+        #json_pre {
+            width: 100%;
+            height: 100%;
+        }
+
+        .json_dialog {
+            display: none;
+        }
+
+        .ui_spinner-ovd {
+            border: none !important;
+        }
+
+            .ui_spinner-ovd input {
+                margin: 0px !important;
+            }
+
+            .ui_spinner-ovd .ui-spinner-down {
+                border-bottom: solid 1px silver !important;
+                border-right: solid 1px silver !important;
+            }
+
+            .ui_spinner-ovd .ui-spinner-up {
+                border-top: solid 1px silver !important;
+                border-right: solid 1px silver !important;
+            }
+
+        .child_row {
+            display: none;
+        }
+
+        .lh-49 {
+            line-height: 37px;
+        }
+    </style>
+    
+    <div id="titan_config" style="width:1200px; margin-left:auto; margin-right:auto; margin-top:20px;">
+        <div class="titan_content">
+            <div class="titan_params">
+            </div>
+            <div class="titan_report">
+            </div>
+        </div>
+    </div>
+<footer class="footer navbar  bg-dark">
+    <div class="container">
+            <div class="logo-copyright">
+                <div class="footer-logo"></div>
+                <div class="copyright text-white">titanDWS - A dynamic data driven web service with extensible plugins.</div>
+            </div>
+    </div>
+</footer>
+
+</body>
+</html>
