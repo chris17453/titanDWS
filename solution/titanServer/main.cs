@@ -9,6 +9,7 @@ namespace titan_server
             int port = 8888;
             string url = "http://localhost:"+port;
 
+
             using (WebApp.Start<Startup>(url))
             {
                 Console.WriteLine("Hosted: "+url);

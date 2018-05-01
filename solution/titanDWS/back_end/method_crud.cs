@@ -111,8 +111,44 @@ namespace titan {
                     }//end if in _json
                     
                     //normal assignement
-                    this.GetType().GetProperty(field_name).SetValue(this, value, null);
-                    return true;
+                    try{
+                        if(typeof(column_data)==value.GetType()) {
+
+                        if(((column_data)value).value.Equals(DBNull.Value)){
+                            this.GetType().GetProperty(field_name).SetValue(this,null, null);
+                        } else {
+                            this.GetType().GetProperty(field_name).SetValue(this,((column_data)value).value, null);
+                        }
+                        /*System.TypeCode typeCode = Type.GetTypeCode(this.GetType().GetProperty(field_name).PropertyType);
+
+                        switch (typeCode)
+                        {
+                            case TypeCode.Boolean : this.GetType().GetProperty(field_name).SetValue(this,((column_data)value).value, null); break;
+                            case TypeCode.Byte    : this.GetType().GetProperty(field_name).SetValue(this,(Byte    )value, null); break;
+                            case TypeCode.Char    : this.GetType().GetProperty(field_name).SetValue(this,(Char    )value, null); break;
+                            case TypeCode.DateTime: this.GetType().GetProperty(field_name).SetValue(this,(DateTime)value, null); break;
+                            case TypeCode.DBNull  : this.GetType().GetProperty(field_name).SetValue(this,(DBNull  )value, null); break;
+                            case TypeCode.Decimal : this.GetType().GetProperty(field_name).SetValue(this,(Decimal )value, null); break;
+                            case TypeCode.Double  : this.GetType().GetProperty(field_name).SetValue(this,(Double  )value, null); break;
+                            //case TypeCode.Empty   : this.GetType().GetProperty(field_name).SetValue(this,(NULL)value, null); break;
+                            case TypeCode.Int16   : this.GetType().GetProperty(field_name).SetValue(this,(Int16   )value, null); break;
+                            case TypeCode.Int32   : this.GetType().GetProperty(field_name).SetValue(this,(Int32   )value, null); break;
+                            case TypeCode.Int64   : this.GetType().GetProperty(field_name).SetValue(this,(Int64   )value, null); break;
+                            case TypeCode.Object  : this.GetType().GetProperty(field_name).SetValue(this,(Object  )value, null); break;
+                            case TypeCode.SByte   : this.GetType().GetProperty(field_name).SetValue(this,(SByte   )value, null); break;
+                            case TypeCode.Single  : this.GetType().GetProperty(field_name).SetValue(this,(Single  )value, null); break;
+                            case TypeCode.UInt16  : this.GetType().GetProperty(field_name).SetValue(this,(UInt16  )value, null); break;
+                            case TypeCode.UInt32  : this.GetType().GetProperty(field_name).SetValue(this,(UInt32  )value, null); break;
+                            case TypeCode.UInt64  : this.GetType().GetProperty(field_name).SetValue(this,(UInt64  )value, null); break;
+                            default: break;
+                        }*/
+                        } else {
+                            this.GetType().GetProperty(field_name).SetValue(this, value, null);
+                        }
+                        return true;
+                    }catch (Exception ex) {
+                        var g=1;
+                    }
                 }
                 return false;
             }
@@ -192,7 +228,9 @@ namespace titan {
                 
             if (null!=res && null!=res.Keys && res.Keys.Length>0) {
                     foreach (String field_name in res.Keys) {
-                        this.set_property(field_name,res[0,field_name]);
+                    row r=res[0];
+                    object val=r[field_name];
+                        this.set_property(field_name,val);
                     }//loop through all keys
                     return true;
                 }//if it exist

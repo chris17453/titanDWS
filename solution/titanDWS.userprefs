@@ -1,23 +1,33 @@
 ﻿<Properties StartupConfiguration="{C4494896-DB9D-4E01-9DFF-5F192E2911C3}|Default">
   <MonoDevelop.Ide.ItemProperties.titanServer PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../nocodedb/nocodedb/data/adapters/mssql/mssql_adapter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../nocodedb/nocodedb/data/adapters/base_adapter.cs">
     <Files>
-      <File FileName="../../nocodedb/nocodedb/data/models/data-set.cs" Line="78" Column="41" />
-      <File FileName="../../nocodedb/nocodedb/data/models/row.cs" Line="19" Column="32" />
-      <File FileName="../../nocodedb/nocodedb/data/adapters/mysql/mysql_adapter.cs" Line="127" Column="52" />
-      <File FileName="../../nocodedb/nocodedb/data/adapters/mssql/mssql_adapter.cs" Line="144" Column="48" />
+      <File FileName="../../nocodedb/nocodedb/data/models/data-set.cs" Line="78" Column="1" />
+      <File FileName="../../nocodedb/nocodedb/data/models/row.cs" Line="41" Column="33" />
+      <File FileName="../../nocodedb/nocodedb/data/adapters/mssql/mssql_adapter.cs" Line="35" Column="1" />
+      <File FileName="titanDWS/back_end/method_crud.cs" Line="147" Column="1" />
+      <File FileName="../../nocodedb/nocodedb/data/models/crud.cs" Line="113" Column="31" />
+      <File FileName="titanDWS/model/titan_models.cs" Line="24" Column="1" />
+      <File FileName="titanDWS/controller/resource_controller.cs" Line="74" Column="1" />
+      <File FileName="titanServer/main.cs" Line="13" Column="13" />
+      <File FileName="titanDWS/core/column.cs" Line="71" Column="39" />
+      <File FileName="titanDWS/core/external_data_defaults.cs" Line="1" Column="1" />
+      <File FileName="titanDWS/controller/method_controller.cs" Line="125" Column="1" />
+      <File FileName="../../nocodedb/nocodedb/data/models/column-data.cs" Line="91" Column="48" />
+      <File FileName="titanDWS/back_end/method_execute.cs" Line="55" Column="1" />
+      <File FileName="../../nocodedb/nocodedb/data/adapters/db.cs" Line="32" Column="1" />
+      <File FileName="titanDWS/back_end/method_variables.cs" Line="55" Column="54" />
+      <File FileName="../../nocodedb/nocodedb/data/adapters/base_adapter.cs" Line="85" Column="1" />
+      <File FileName="../../nocodedb/nocodedb/data/models/query-params.cs" Line="31" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>res.results.external_mapping</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/nd/repos/titanDWS/solution/titanDWS/back_end/method_crud.cs" relfile="titanDWS/back_end/method_crud.cs" line="150" column="29" />
+      <Breakpoint file="/home/nd/repos/titanDWS/solution/titanDWS/back_end/method_execute.cs" relfile="titanDWS/back_end/method_execute.cs" line="55" column="62" />
+      <Breakpoint file="/home/nd/repos/nocodedb/nocodedb/data/adapters/db.cs" line="31" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.titanDWS PreferredExecutionTarget="MonoDevelop.Default" />

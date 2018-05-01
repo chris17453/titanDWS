@@ -126,27 +126,31 @@ namespace titan {
                     return 0;
                 });*/
                                     
-                this.data_schema.Sort(delegate (titan.core.column x, titan.core.column y) {
-                    if(null==y) return -1;
-                    if(null==x) return 1;
-                    if (x.order == y.order) {
-                        return x.name.CompareTo(y.name);
-                    }
-                    if (x.order < y.order) return -1;
-                    if (x.order > y.order) return 1;
-                    return 0;
-                });
+                if(null!=this.data_schema) {
+                    this.data_schema.Sort(delegate (titan.core.column x, titan.core.column y) {
+                        if(null==y) return -1;
+                        if(null==x) return 1;
+                        if (x.order == y.order) {
+                            return x.name.CompareTo(y.name);
+                        }
+                        if (x.order < y.order) return -1;
+                        if (x.order > y.order) return 1;
+                        return 0;
+                    });
+                }
 
-                this.parameters.Sort(delegate (titan.core.parameter x, titan.core.parameter y) {
-                    if(null==y) return -1;
-                    if(null==x) return 1;
-                    if (x.order == y.order) {
-                        return x.name.CompareTo(y.name);
-                    }
-                    if (x.order < y.order) return -1;
-                    if (x.order > y.order) return 1;
-                    return 0;
-                });
+                if(null!=this.parameters) {
+                    this.parameters.Sort(delegate (titan.core.parameter x, titan.core.parameter y) {
+                        if(null==y) return -1;
+                        if(null==x) return 1;
+                        if (x.order == y.order) {
+                            return x.name.CompareTo(y.name);
+                        }
+                        if (x.order < y.order) return -1;
+                        if (x.order > y.order) return 1;
+                        return 0;
+                    });
+                }
                 if(String.IsNullOrWhiteSpace(this.template_name)) {
                     this.template=core.template.get_default();
                     if(String.IsNullOrWhiteSpace(this.template_name)) {                     //try to set the template name.
@@ -156,7 +160,7 @@ namespace titan {
                         !template[0,"name"] )) {
                             template_name="Default";
                         } else {
-                            template_name=(string)this.template[0,"name"];
+                            template_name=this.template[0,"name"];
                         }
                     }
                 } else {

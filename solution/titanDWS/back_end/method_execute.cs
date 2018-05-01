@@ -52,7 +52,7 @@ namespace titan {
                         /*if(this.query_is_sp) {
                             res=db.sp_fetch(this.connection_string,q.getTotalQuery,q.totalParameters);
                         } else {*/
-                        column_data res_count=db.execute_scalar(this.connection_string,q.getTotalQuery,q.totalParameters);
+                    column_data res_count=db.execute_scalar(this.connection_string.Trim(),q.getTotalQuery,q.totalParameters);
                         //}
                         if(null!=res_count) {
                             this.results.total_rows=res_count;
