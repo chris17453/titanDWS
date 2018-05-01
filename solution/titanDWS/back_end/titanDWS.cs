@@ -57,7 +57,7 @@ namespace titan {
                 string query="SELECT * FROM titanDWS WITH (NOLOCK) WHERE cron=cast(1 as bit)"; //get all methods that are cron's
                 data_set rows=db.fetch_all("titan",query);
 
-                foreach(row row in rows.rows) {
+                foreach(row row in rows) {
                     lambda i=new lambda();
                     i.group =(string)row["group"];
                     i.method=(string)row["method"];
@@ -87,6 +87,7 @@ namespace titan {
                 m.titan_debug=titan_debug;
                 if(string.IsNullOrWhiteSpace(i.group) || string.IsNullOrWhiteSpace(i.method)) return new method();
                 bool found=m.load(i.group,i.method,i.owner,i.configure,token);
+                
                 m.base_init();
                 if(ConfigurationManager.AppSettings["titan_debug"]=="true") {
                     m.titan_debug=true;
@@ -108,8 +109,8 @@ namespace titan {
                 data_set result=db.fetch("titan",query,param);
 
                 if(null!=results) {
-                    string json= (string)result["json"];
-                    string token=(string)result["token"];
+                    string json= (string)result[0,"json"];
+                    string token=(string)result[0,"token"];
                     export_input=jss.Deserialize<lambda>(json);
                     s_token=jss.Deserialize<security.titan_token>(token);
                 } else {

@@ -5,8 +5,6 @@ namespace titan_server
 {
     public class main
     {
-
-
         private static void Main(string[] args){
             int port = 8888;
             string url = "http://localhost:"+port;

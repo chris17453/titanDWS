@@ -66,11 +66,11 @@ namespace titan.core{
             selectOptions.Clear();
             if(selectData.ToUpper().Contains("SELECT")) {
                data_set  results=db.fetch_all("",selectData,parameters);
-               foreach(row res in results.rows) {
-                        if(res.ContainsKey("display") && res.ContainsKey("value") && res.ContainsKey("selected")) {
-                        string v1=res["display"].ToString();
-                        string v2=res["value"].ToString();
-                        bool   v3=(bool)res["selected"];
+               foreach(row res in results) {
+                    if(results.ContainsKey("display") && results.ContainsKey("value") && results.ContainsKey("selected")) {
+                        string v1=res["display"];
+                        string v2=res["value"];
+                        bool   v3=res["selected"];
                         selectOptions.Add(new select_option(v1,v2,v3));
                     }
                }

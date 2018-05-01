@@ -35,7 +35,7 @@ namespace titan.core {
                 init();
                 return data;
              }
-            foreach(row data_type in types.rows) {
+            foreach(row data_type in types) {
                 if(((string)data_type["name"]).ToLower()==type.ToLower()) {                     //if this is the data type.. lets transform it!
                     if(String.IsNullOrWhiteSpace((string)data_type["format"])) return data;     //if no format then return data
                     string format= (string)data_type["format"];

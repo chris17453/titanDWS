@@ -190,9 +190,9 @@ namespace titan {
                 data_set res=db.fetch("titan",query,q_param);
                 
                 
-                if (null!=res) {
+            if (null!=res && null!=res.Keys && res.Keys.Length>0) {
                     foreach (String field_name in res.Keys) {
-                        this.set_property(field_name,res[field_name]);
+                        this.set_property(field_name,res[0,field_name]);
                     }//loop through all keys
                     return true;
                 }//if it exist

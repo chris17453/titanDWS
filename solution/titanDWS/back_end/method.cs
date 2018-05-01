@@ -100,7 +100,6 @@ namespace titan {
                     this.parameter_types     =core.parameter_types.get();
                     this.methods             =linked_method.get();
                     this.plugins             =db.fetch_all("titan","SELECT [name],[display] FROM titanDWS_plugins where active=1 ORDER BY display");
-
                     if(null==this.parameters) this.parameters=new List<titan.core.parameter>();
                     if(null==this.data_schema) {
                         this.data_schema=new List<titan.core.column>();
@@ -151,10 +150,13 @@ namespace titan {
                 if(String.IsNullOrWhiteSpace(this.template_name)) {
                     this.template=core.template.get_default();
                     if(String.IsNullOrWhiteSpace(this.template_name)) {                     //try to set the template name.
-                        if(null==this.template || !template[0].ContainsKey("name")) {
+                    if (null==this.template || 
+                       (null!=template && 
+                        template.Count>0 && 
+                        !template[0,"name"] )) {
                             template_name="Default";
                         } else {
-                            template_name=(string)this.template[0]["name"];
+                            template_name=(string)this.template[0,"name"];
                         }
                     }
                 } else {

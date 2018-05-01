@@ -49,13 +49,13 @@ namespace titan {
                 try{
                     if(this.count) {
                         data_set res=null;
-                        if(this.query_is_sp) {
+                        /*if(this.query_is_sp) {
                             res=db.sp_fetch(this.connection_string,q.getTotalQuery,q.totalParameters);
-                        } else {
-                            res=db.fetch(this.connection_string,q.getTotalQuery,q.totalParameters);
-                        }
-                        if(null!=res) {
-                             this.results.total_rows=(int)res["count"];
+                        } else {*/
+                        column_data res_count=db.execute_scalar(this.connection_string,q.getTotalQuery,q.totalParameters);
+                        //}
+                        if(null!=res_count) {
+                            this.results.total_rows=res_count;
                         }
                     }
                     data_set rows=null;
@@ -88,7 +88,7 @@ namespace titan {
                     if(null!=rows) {
                         this.results.rows.Clear();
             
-                        foreach(row row in rows.rows) {
+                        foreach(row row in rows) {
                             process_data_row(q,row,noLinks);
                         }
                     }//while reader has rows

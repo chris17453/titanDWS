@@ -34,7 +34,7 @@ namespace titan.core {
             linked_method def=new linked_method();
             def.title="CHOOSE Method";
             methods.Add(def);
-            foreach (row result in results.rows) {
+            foreach (row result in results) {
                 linked_method lm=new linked_method();
                 lm.title        =(string)result["title"];
                 lm.name         =(string)result["method"];
