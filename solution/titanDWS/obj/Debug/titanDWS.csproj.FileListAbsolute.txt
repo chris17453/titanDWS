@@ -36,10 +36,8 @@ C:/repos/Main/titanDWS/titanDWS/bin/titanDWS_core.pdb
 /home/nd/repos/titanDWS/solution/titanDWS/bin/Newtonsoft.Json.dll
 /home/nd/repos/titanDWS/solution/titanDWS/bin/System.Net.Http.Formatting.dll
 /home/nd/repos/titanDWS/solution/titanDWS/bin/System.Web.Http.dll
-/home/nd/repos/titanDWS/solution/titanDWS/bin/System.Web.Http.WebHost.dll
 /home/nd/repos/titanDWS/solution/titanDWS/bin/System.Net.Http.Formatting.xml
 /home/nd/repos/titanDWS/solution/titanDWS/bin/System.Web.Http.xml
-/home/nd/repos/titanDWS/solution/titanDWS/bin/System.Web.Http.WebHost.xml
 /home/nd/repos/titanDWS/solution/titanDWS/bin/Newtonsoft.Json.xml
 /home/nd/repos/titanDWS/solution/titanDWS/bin/MySql.Data.xml
 /home/nd/repos/titanDWS/solution/titanDWS/bin/data.dll.config

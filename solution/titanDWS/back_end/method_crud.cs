@@ -100,7 +100,7 @@ namespace titan {
                                         this.GetType().GetProperty(field_name).SetValue(this,((JArray)o2).ToObject(constructed), null);
 
                                     } catch (Exception ex) {
-                                        Console.WriteLine(ex.Message);
+                                    Console.WriteLine(String.Format("{0} -> {1}",field_name,ex.Message));
                                         return false;
                                     }
                                 }
@@ -147,6 +147,7 @@ namespace titan {
                         }
                         return true;
                     }catch (Exception ex) {
+                        Console.WriteLine(String.Format("{0} -> {1}",field_name,ex.Message));
                         var g=1;
                     }
                 }

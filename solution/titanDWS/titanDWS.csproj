@@ -20,6 +20,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,13 +59,10 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -251,13 +249,13 @@
     <EmbeddedResource Include="media\tablesorter\js\extras\jquery.tablesorter.pager.js" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\nocodedb\nocodedb\data\data.csproj">
-      <Project>{D580FE26-16EB-44C0-A984-404102C32704}</Project>
-      <Name>data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\nocodedb\nocodedb\log\log.csproj">
       <Project>{7EC32681-4F92-4CE4-8B04-6E835519A162}</Project>
       <Name>log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\nocodedb\nocodedb\data\data.csproj">
+      <Project>{D580FE26-16EB-44C0-A984-404102C32704}</Project>
+      <Name>data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

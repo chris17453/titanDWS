@@ -22,7 +22,7 @@ using titan.core;
 
 namespace titan {
 
-    public class data:titan.crud<data> {
+    public class data:nocodedb.data.crud<data> {
         public string               display                { get; set; }
         public string               group                  { get; set; }
         public string               method                 { get; set; }
